@@ -1,0 +1,48 @@
+From d4cc9186e7be14e582e246310e9a54ee5982903e Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 19 Sep 2024 19:25:56 +0800
+Subject: [PATCH] install
+
+---
+ src/Sorts.desktop | 11 +++++++++++
+ src/Sorts.pro     |  8 ++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 src/Sorts.desktop
+
+diff --git a/src/Sorts.desktop b/src/Sorts.desktop
+new file mode 100644
+index 0000000..69d5170
+--- /dev/null
++++ b/src/Sorts.desktop
+@@ -0,0 +1,11 @@
++[Desktop Entry]
++Categories=Accessibility;Qt;Utility;
++Exec=Sorts
++Name=Sorts
++Name[zh_CN]=Sorts
++Icon=dist_high
++StartupNotify=false
++Terminal=false
++Type=Application
++GenericName=Sorts
++Version=1.0
+\ No newline at end of file
+diff --git a/src/Sorts.pro b/src/Sorts.pro
+index c12c7f9..6380099 100644
+--- a/src/Sorts.pro
++++ b/src/Sorts.pro
+@@ -19,3 +19,11 @@ HEADERS += \
+     window.h \
+     sorter.h \
+     xslider.h
++
++target.path = $$PREFIX/bin
++desktop.files = Sorts.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/apps/
++icons.files = ../img/dist_high.png
++
++INSTALLS += target desktop icons
+-- 
+2.43.4
+
